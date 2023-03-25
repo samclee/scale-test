@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf5v81a3al5ec"]
+
+[ext_resource type="Script" path="res://Label.gd" id="1_80200"]
+[ext_resource type="Texture2D" uid="uid://bklpwdwvlcj4s" path="res://tile_0005.png" id="2_q86e4"]
+
+[node name="main" type="Node"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 100.0
+offset_bottom = 90.0
+scale = Vector2(2, 2)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+texture = ExtResource("2_q86e4")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_80200")
